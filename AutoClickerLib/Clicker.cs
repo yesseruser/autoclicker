@@ -1,4 +1,4 @@
-﻿namespace Backend;
+﻿namespace AutoClickerLib;
 
 public class Clicker
 {

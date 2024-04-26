@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace Backend;
+namespace AutoClickerLib;
 
 public class Win32Apis
 {

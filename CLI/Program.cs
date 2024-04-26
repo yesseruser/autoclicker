@@ -1,4 +1,4 @@
-﻿using Backend;
+﻿using AutoClickerLib;
 
 var cancellationSource = new CancellationTokenSource();
 

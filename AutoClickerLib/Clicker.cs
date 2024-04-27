@@ -2,14 +2,14 @@
 
 public class Clicker
 {
-    public async Task AutoClick(CancellationToken cancellationToken)
+    public async Task AutoClick(int intervalMilliseconds, CancellationToken cancellationToken)
     {
         while (true)
         {
             Win32Apis.GetCursorPos(out var position);
             LeftMouseClick(position.X, position.Y);
             
-            await Task.Delay(100, cancellationToken);
+            await Task.Delay(intervalMilliseconds, cancellationToken);
             if (cancellationToken.IsCancellationRequested)
                 break;
         }

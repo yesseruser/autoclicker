@@ -6,8 +6,8 @@ public class Clicker
     {
         while (true)
         {
-            Win32Apis.GetCursorPos(out var pos);
-            LeftMouseClick(pos.X, pos.Y);
+            Win32Apis.GetCursorPos(out var position);
+            LeftMouseClick(position.X, position.Y);
             
             await Task.Delay(100, cancellationToken);
             if (cancellationToken.IsCancellationRequested)
@@ -15,10 +15,10 @@ public class Clicker
         }
     }
 
-    public static void LeftMouseClick(int xpos, int ypos)
+    public static void LeftMouseClick(int xPosition, int yPosition)
     {
-        Win32Apis.SetCursorPos(xpos, ypos);
-        Win32Apis.mouse_event(Win32Apis.MouseEventLeftDown, xpos, ypos, 0, 0);
-        Win32Apis.mouse_event(Win32Apis.MouseEventLeftUp, xpos, ypos, 0, 0);
+        Win32Apis.SetCursorPos(xPosition, yPosition);
+        Win32Apis.mouse_event(Win32Apis.MouseEventLeftDown, xPosition, yPosition, 0, 0);
+        Win32Apis.mouse_event(Win32Apis.MouseEventLeftUp, xPosition, yPosition, 0, 0);
     }
 }
